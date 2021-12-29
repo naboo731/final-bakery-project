@@ -1,0 +1,147 @@
+[
+    {
+        "id": 1,
+        "item": "chocolate chip cookies",
+        "price": 8.99,
+        "quantity": 12,
+        "category": "cookies",
+        "imageURL": "https://handletheheat.com/wp-content/uploads/2020/10/BAKERY-STYLE-CHOCOLATE-CHIP-COOKIES-9-637x637-1.jpg"
+    }, 
+    {
+        "id": 2,
+        "item": "snickerdoodle cookies",
+        "price": 7.99,
+        "quantity": 12,
+        "category": "cookies",
+        "imageURL": "https://photos.bigoven.com/recipe/hero/snickerdoodle-cookies-4.jpg?h=300&w=300"
+    },
+    {
+        "id": 3,
+        "item": "cinnamon rolls",
+        "price": 10.99,
+        "quantity": 12,
+        "category": "pastries",
+        "imageURL": "https://bakerbettie.com/wp-content/uploads/2013/03/IMG_31801-480x480.jpg"
+    }, 
+    {
+        "id": 4,
+        "item": "brookie bars",
+        "price": 6.99,
+        "quantity": 12,
+        "category": "cookies",
+        "imageURL": "https://therecipecritic.com/wp-content/uploads/2017/04/cookie-brownie-bars-500x500.jpg"
+    },
+    {
+        "id": 5,
+        "item": "butter croissant",
+        "price": 6.99,
+        "quantity": 6,
+        "category": "pastries",
+        "imageURL": "https://bakingamoment.com/wp-content/uploads/2019/02/IMG_2757-croissant-recipe-easy-720x720.jpg"
+    },
+    {
+        "id": 6,
+        "item": "cherry danish",
+        "price": 7.99,
+        "quantity": 8,
+        "category": "pastries",
+        "imageURL": "https://lilluna.com/wp-content/uploads/2021/06/cherry-danish-final2-resize-12-500x500.jpg"
+    },
+    {
+        "id": 7,
+        "item": "mille feuille",
+        "price": 6.99,
+        "quantity": 12,
+        "category": "pastries",
+        "imageURL": "https://images.media-allrecipes.com/userphotos/4298742.jpg"
+    },
+    {
+        "id": 8,
+        "item": "chocolate creme puff",
+        "price": 4.99,
+        "quantity": 2,
+        "category": "pastries",
+        "imageURL": "https://i.pinimg.com/474x/35/31/0f/35310ff0c47b62b69ff477fc84ce13d4.jpg"
+    },
+    {
+        "id": 9,
+        "item": "tiramisu",
+        "price": 8.99,
+        "quantity": 1,
+        "category": "chocolates",
+        "imageURL": "https://photos.bigoven.com/recipe/hero/tiramisu-84c931.jpg?h=300&w=300"
+    },
+    {
+        "id": 10,
+        "item": "chocolate mousse",
+        "price": 5.99,
+        "quantity": 1,
+        "category": "chocolates",
+        "imageURL": "https://photos.bigoven.com/recipe/hero/semisweet-chocolate-mousse-1c46dc.jpg?h=300&w=300"
+    },
+    {
+        "id": 11,
+        "item": "strawberry cheesecake",
+        "price": 4.99,
+        "quantity": 1,
+        "category": "cake",
+        "imageURL": "https://www.bakedbyanintrovert.com/wp-content/uploads/2018/05/Strawberry-Cheesecake-Recipe-Image-735x735.jpg"
+    },
+    {
+        "id": 12,
+        "item": "lemon raspberry tarts",
+        "price": 7.99,
+        "quantity": 3,
+        "category": "pastries",
+        "imageURL": "https://storcpdkenticomedia.blob.core.windows.net/media/recipemanagementsystem/media/recipe-media-files/recipes/retail/x17/2017_lemon-raspberry-tarts_15418_600x600.jpg?ext=.jpg"
+    },
+    {
+        "id": 13,
+        "item": "deluxe chocolate cake",
+        "price": 24.99,
+        "quantity": 1,
+        "category": "cake",
+        "imageURL": "https://preppykitchen.com/wp-content/uploads/2019/06/Chocolate-cake-recipe-1200a.jpg"
+    },
+    {
+        "id": 14,
+        "item": "sweet cakes party cake",
+        "price": 23.98,
+        "quantity": 1,
+        "category": "cake",
+        "imageURL": "https://www.livewellbakeoften.com/wp-content/uploads/2021/03/Funfetti-Cake-5s.jpg"
+    },
+    {
+        "id": 15,
+        "item": "vanilla lovers",
+        "price": 19.99,
+        "quantity": 1,
+        "category": "cake",
+        "imageURL": "https://cdn.jwplayer.com/v2/media/8hs3T0RW/poster.jpg?width=1920"
+    },
+    {
+        "id": 16,
+        "item": "milk and cookies cake",
+        "price": 23.99,
+        "quantity": 1,
+        "category": "cake",
+        "imageURL": "https://sugarandsparrow.s3.us-west-2.amazonaws.com/flour/wp-content/uploads/2020/04/15222600/Vegan-Oreo-Cake-Recipe-Header.jpg"
+    }, 
+    {
+        "id": 17,
+        "item": "chocolate dipped oatmeal cookies",
+        "price": 13.99,
+        "quantity": 12,
+        "category": "cake",
+        "imageURL": "https://thefoodcafe.com/wp-content/uploads/2019/01/chocolate-chip-dipped-cookies-final-shot-The-Food-Cafe-500x467.jpg"
+    }, 
+    {
+        "id": 18,
+        "item": "french apple cake",
+        "price": 23.99,
+        "quantity": 1,
+        "category": "cake",
+        "imageURL": "https://sugargeekshow.com/wp-content/uploads/2019/10/apple-cake-featured.jpg"
+    }
+    
+]

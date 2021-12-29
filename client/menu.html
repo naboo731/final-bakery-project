@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Cakes Menu</title>
+    <link rel="icon" type="image/png" href="../mini logo.png"/>
+    <link href="styles.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Licorice&family=Open+Sans+Condensed:wght@300&display=swap');
+    </style>
+</head>
+<body>
+    <section id="main-heading">
+        <heading>
+             <a href="home.html"><img src="../logo without background.png" id="logo"></a> 
+         </heading> 
+          <i id="loginbtn" class="fas fa-user" style="font-size:36px;color:#5b6e74"></i>
+          <button id="order-button" class="grow" href="order.html"><h2 id="order-link">ORDER</h2></button>
+           <i id="shoppingcart" class="fa fa-shopping-cart" style="font-size:36px;color:#5b6e74" href="shoppingcart.html"></i>
+    </section>
+    <section id="nav-section">
+        <nav>
+            <a href="menu.html" id="menu-link-anchor">Menu</a>
+            <a href="about.html" id="about-link-anchor">About</a>
+            <a href="gifts.html" id="gifts-link-anchor">Gifts</a>
+            <a href="sweetmoments.html" id="sweetmoments-link-anchor">Sweet Moments</a>
+        </nav>
+    </section>
+    <section id="searchbar-section">
+        <div class="search_box">
+            <input type="text" class="input_search" id="search-bar" placeholder="find deliciousness">
+            <div class="search_btn"><i class="fas fa-search"></i></div>
+        </div>
+
+    </section>
+    <section id="item-categories">
+        <button id="cookies-btn">Cookies</button>
+        <button id="pastries-btn">Pastries</button>
+        <button id="cakes-btn">Cakes</button>
+        <button id="chocolate-btn">Chocolate World</button>
+    </section>
+   
+    <section id="bakery-items-container">
+    </section>
+    <footer id="footer">
+        <img src="../mini logo.png" id="mini-logo"/>
+        <p id="title" class= "text">Sweet Cakes Fresh Bakery</p>
+        <p id="date" class= "text">Established 2016</p>
+        <p id="address" class= "text">Address: 101 Fresh Bakery Rd. Midtown, DE 19708</p>
+        <p id="number" class= "text">Phone Number: 302-888-6165</p>
+    </footer>
+
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src= "menu.js"></script>
+</body>
+</html>
