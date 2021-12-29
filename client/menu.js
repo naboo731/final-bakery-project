@@ -39,19 +39,39 @@ searchbar.addEventListener('keyup', (el) => {
     const filteredItems = bakeryItems.filter(arr => {
          return arr.item.includes(searchItem)
      })
-     console.log(filteredItems)
      displayBakery(filteredItems)
  })
 
 ///////////////////////////
-ß
 let cookiesbtn = document.querySelector("#cookies-btn")
 let pastriesbtn = document.querySelector("#pastries-btn")
 let cakesbtn = document.querySelector("#cakes-btn")
 let chocolatebtn = document.querySelector("#chocolate-btn")
 
 cookiesbtn.addEventListener('click', () => {
-    console.log(bakeryItems)
-    // let cookies = 
-    // displayBakery()
+    const cookies = bakeryItems.filter(arr => {
+        return arr.category.includes("cookies")
+    })
+    displayBakery(cookies)
+})
+
+pastriesbtn.addEventListener('click', () => {
+    const pastries = bakeryItems.filter(arr => {
+        return arr.category.includes("pastries")
+    })
+    displayBakery(pastries)
+})
+
+cakesbtn.addEventListener('click', () => {
+    const cakes = bakeryItems.filter(arr => {
+        return arr.category.includes("cake")
+    })
+    displayBakery(cakes)
+})
+
+chocolatebtn.addEventListener('click', () => {
+    const chocolates = bakeryItems.filter(arr => {
+        return arr.category.includes("chocolates")
+    })
+    displayBakery(chocolates)
 })

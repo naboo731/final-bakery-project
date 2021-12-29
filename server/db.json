@@ -4,7 +4,7 @@
         "item": "chocolate chip cookies",
         "price": 8.99,
         "quantity": 12,
-        "category": "cookies",
+        "category": ["cookies", "chocolates"],
         "imageURL": "https://handletheheat.com/wp-content/uploads/2020/10/BAKERY-STYLE-CHOCOLATE-CHIP-COOKIES-9-637x637-1.jpg"
     }, 
     {
@@ -28,7 +28,7 @@
         "item": "brookie bars",
         "price": 6.99,
         "quantity": 12,
-        "category": "cookies",
+        "category": ["cookies", "chocolates"],
         "imageURL": "https://therecipecritic.com/wp-content/uploads/2017/04/cookie-brownie-bars-500x500.jpg"
     },
     {
@@ -52,7 +52,7 @@
         "item": "mille feuille",
         "price": 6.99,
         "quantity": 12,
-        "category": "pastries",
+        "category": ["pastries", "chocolates"],
         "imageURL": "https://images.media-allrecipes.com/userphotos/4298742.jpg"
     },
     {
@@ -60,7 +60,7 @@
         "item": "chocolate creme puff",
         "price": 4.99,
         "quantity": 2,
-        "category": "pastries",
+        "category": ["pastries", "chocolates"],
         "imageURL": "https://i.pinimg.com/474x/35/31/0f/35310ff0c47b62b69ff477fc84ce13d4.jpg"
     },
     {
@@ -68,7 +68,7 @@
         "item": "tiramisu",
         "price": 8.99,
         "quantity": 1,
-        "category": "chocolates",
+        "category": "pastries",
         "imageURL": "https://photos.bigoven.com/recipe/hero/tiramisu-84c931.jpg?h=300&w=300"
     },
     {
@@ -100,7 +100,7 @@
         "item": "deluxe chocolate cake",
         "price": 24.99,
         "quantity": 1,
-        "category": "cake",
+        "category": ["cake", "chocolates"],
         "imageURL": "https://preppykitchen.com/wp-content/uploads/2019/06/Chocolate-cake-recipe-1200a.jpg"
     },
     {
@@ -124,7 +124,7 @@
         "item": "milk and cookies cake",
         "price": 23.99,
         "quantity": 1,
-        "category": "cake",
+        "category": ["cake", "chocolates"],
         "imageURL": "https://sugarandsparrow.s3.us-west-2.amazonaws.com/flour/wp-content/uploads/2020/04/15222600/Vegan-Oreo-Cake-Recipe-Header.jpg"
     }, 
     {
@@ -132,7 +132,7 @@
         "item": "chocolate dipped oatmeal cookies",
         "price": 13.99,
         "quantity": 12,
-        "category": "cake",
+        "category": ["cookies", "chocolates"],
         "imageURL": "https://thefoodcafe.com/wp-content/uploads/2019/01/chocolate-chip-dipped-cookies-final-shot-The-Food-Cafe-500x467.jpg"
     }, 
     {
