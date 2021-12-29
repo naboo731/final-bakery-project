@@ -42,3 +42,16 @@ searchbar.addEventListener('keyup', (el) => {
      console.log(filteredItems)
      displayBakery(filteredItems)
  })
+
+///////////////////////////
+ß
+let cookiesbtn = document.querySelector("#cookies-btn")
+let pastriesbtn = document.querySelector("#pastries-btn")
+let cakesbtn = document.querySelector("#cakes-btn")
+let chocolatebtn = document.querySelector("#chocolate-btn")
+
+cookiesbtn.addEventListener('click', () => {
+    console.log(bakeryItems)
+    // let cookies = 
+    // displayBakery()
+})

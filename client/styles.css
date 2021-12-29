@@ -294,60 +294,32 @@ body {
   position: relative;
   bottom: 15px;
 }
-#cookies-btn {
+
+.cat-btn {
   color: white;
   font-size: 20px;
-  font-family: "Montserrat", sans-serif;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.cat-btn:hover {
+  cursor: pointer;
+  color: #56494c;
+}
+#cookies-btn {
   position: relative;
   right: 15px;
-  padding: 0;
-  border: none;
-  background: none;
 }
-#cookies-btn:hover {
-  cursor: pointer;
-  color: #56494c;
-}
-#pastries-btn {
-  color: white;
-  font-size: 20px;
-  font-family: "Montserrat", sans-serif;
-  position: relative;
-  padding: 0;
-  border: none;
-  background: none;
-}
-#pastries-btn:hover {
-  cursor: pointer;
-  color: #56494c;
-}
+
 #cakes-btn {
-  color: white;
-  font-size: 20px;
-  font-family: "Montserrat", sans-serif;
   position: relative;
-  padding: 0;
-  border: none;
-  background: none;
   left: 15px;
 }
-#cakes-btn:hover {
-  cursor: pointer;
-  color: #56494c;
-}
+
 #chocolate-btn {
-  color: white;
-  font-size: 20px;
-  font-family: "Montserrat", sans-serif;
   position: relative;
-  padding: 0;
-  border: none;
-  background: none;
   left: 25px;
-}
-#chocolate-btn:hover {
-  cursor: pointer;
-  color: #56494c;
 }
 
 #bakery-items-container {
@@ -355,7 +327,7 @@ body {
   flex-flow: row wrap;
   justify-content: space-evenly;
   position: relative;
-  bottom: 50px;
+  margin-top: 50px;
 }
 .bakery-tile {
   background-color: #cfb9a5;
