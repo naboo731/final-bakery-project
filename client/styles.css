@@ -312,6 +312,11 @@ body {
   cursor: pointer;
   color: #56494c;
 }
+
+#all-btn {
+  position: relative;
+  right: 30px;
+}
 #cookies-btn {
   position: relative;
   right: 15px;
@@ -414,4 +419,29 @@ body {
 
 :-ms-input-placeholder {
   color: #81968f;
+}
+
+#bakery-item-quantity {
+  position: relative;
+  bottom: 60px;
+  right: 50px;
+  font-family: "Open Sans Condensed", sans-serif;
+}
+
+#bakery-item-price {
+  position: relative;
+  bottom: 98px;
+  left: 50px;
+  font-family: "Open Sans Condensed", sans-serif;
+}
+
+#cart-btn {
+  width: 100px;
+  height: 40px;
+  position: relative;
+  bottom: 105px;
+  font-family: "Open Sans Condensed", sans-serif;
+  border-radius: 50px;
+  background-color: #5b6e74;
+  color: white;
 }

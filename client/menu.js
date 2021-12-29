@@ -17,7 +17,10 @@ function createBakeryTile(bakery) {
 
     bakeryTile.innerHTML = 
     `<img alt='bakery item cover image' src=${bakery.imageURL} class="bakery-item-cover-image"/>
-    <p class="bakery-item-title">${bakery.item}</p>`
+    <p class="bakery-item-title">${bakery.item}</p>
+    <p id="bakery-item-quantity">${bakery.quantity}</p>
+    <p id="bakery-item-price">${bakery.price}</p>
+    <button id="cart-btn">add to cart</button>`
 
     bakeryItemsContainer.appendChild(bakeryTile)
 }
@@ -43,10 +46,15 @@ searchbar.addEventListener('keyup', (el) => {
  })
 
 ///////////////////////////
+let allbtn = document.querySelector("#all-btn")
 let cookiesbtn = document.querySelector("#cookies-btn")
 let pastriesbtn = document.querySelector("#pastries-btn")
 let cakesbtn = document.querySelector("#cakes-btn")
 let chocolatebtn = document.querySelector("#chocolate-btn")
+
+allbtn.addEventListener('click', () => {
+    displayBakery(bakeryItems)
+})
 
 cookiesbtn.addEventListener('click', () => {
     const cookies = bakeryItems.filter(arr => {
