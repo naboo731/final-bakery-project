@@ -364,6 +364,10 @@ body {
   position: relative;
   bottom: 20px;
 }
+.bakery-tile:hover {
+  cursor: pointer;
+  background-color: white;
+}
 #searchbar-section {
   height: 150px;
   display: flex;

@@ -83,3 +83,11 @@ chocolatebtn.addEventListener('click', () => {
     })
     displayBakery(chocolates)
 })
+
+//////////////////////////
+
+const cartbtn = document.querySelector("#cart-btn")
+
+cartbtn.addEventListener('click', () => {
+    
+})
