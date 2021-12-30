@@ -36,11 +36,6 @@ body {
 #order-link-anchor {
   text-decoration: none;
 }
-#shoppingcart {
-  position: relative;
-  left: 100px;
-}
-
 #loginbtn {
   position: relative;
   left: 300px;
@@ -288,10 +283,7 @@ body {
   cursor: pointer;
   color: #56494c;
 }
-#shoppingcart:hover {
-  cursor: pointer;
-  color: #56494c;
-}
+
 #item-categories {
   display: flex;
   flex-direction: row;
@@ -329,7 +321,7 @@ body {
 
 #chocolate-btn {
   position: relative;
-  left: 25px;
+  left: 35px;
 }
 
 #bakery-items-container {
@@ -438,7 +430,6 @@ body {
   left: 50px;
   font-family: "Open Sans Condensed", sans-serif;
 }
-
 #cart-btn {
   width: 100px;
   height: 40px;
@@ -448,4 +439,60 @@ body {
   border-radius: 50px;
   background-color: #5b6e74;
   color: white;
+}
+
+.cart {
+  position: absolute;
+  min-height: 10rem;
+  top: 0;
+  right: 0;
+  transition: all 0.3s ease-in-out;
+  background: rgba(238, 130, 238, 0.329);
+  width: 0;
+  overflow: hidden;
+}
+
+.show-cart {
+  width: 18rem;
+  padding: 2rem 1.5rem;
+  position: relative;
+  top: 200px;
+}
+
+.cart-item {
+  transition: all 2s ease-in-out;
+}
+.cart-info__icon {
+  color: var(--mainBlack);
+  cursor: pointer;
+}
+
+.cart-info {
+  border: 0.1rem solid var(--mainBlack);
+  color: var(--mainBlack);
+  border-radius: 0.25rem;
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+  position: relative;
+  left: 100px;
+  top: 30px;
+}
+.cart-info:hover {
+  background: var(--mainPink);
+  border-color: var(--mainPink);
+  color: var(--mainWhite);
+}
+.cart-info:hover .cart-info__icon {
+  color: var(--mainWhite);
+}
+.cart-item-remove {
+  color: var(--mainPink);
+  transition: all 1s ease-in-out;
+}
+.cart-item-remove:hover {
+  transform: scale(1.1);
+  color: var(--mainBlack);
+}
+#cart-item-price {
+  font-size: 0.8rem;
 }

@@ -86,8 +86,20 @@ chocolatebtn.addEventListener('click', () => {
 
 //////////////////////////
 
-const cartbtn = document.querySelector("#cart-btn")
+const cartInfo = document.querySelector("#cart-info")
+const cart = document.querySelector("#cart")
+const cartBtn = document.querySelectorAll("#cart-btn")
 
-cartbtn.addEventListener('click', () => {
-    
-})
+cartInfo.addEventListener('click', () => {
+    cart.classList.toggle('show-cart')
+
+})()
+
+
+const cartAdder = () => {
+    cartBtn.forEach(function(btn){
+        btn.addEventListener('click', function(event){
+            
+        })
+    })
+}
