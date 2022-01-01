@@ -17,7 +17,6 @@ app.get("/api/bakery/", ctrl.getBakeryItems)
 
 
 
-
 app.listen(5500, () => {
     console.log("Up and running on 5500")
 })
