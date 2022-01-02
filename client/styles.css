@@ -430,7 +430,7 @@ body {
   left: 50px;
   font-family: "Open Sans Condensed", sans-serif;
 }
-#cart-btn {
+.cart-btn {
   width: 100px;
   height: 40px;
   position: relative;

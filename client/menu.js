@@ -20,9 +20,11 @@ function createBakeryTile(bakery) {
     <p class="bakery-item-title">${bakery.item}</p>
     <p id="bakery-item-quantity">${bakery.quantity}</p>
     <p id="bakery-item-price">${bakery.price}</p>
-    <button id="cart-btn">add to cart</button>`
+    <button class="cart-btn ${bakery.item}" >add to cart</button>`
 
     bakeryItemsContainer.appendChild(bakeryTile)
+//    const tileButton = document.querySelector(`.cart-btn ${bakery.item}`)
+//     tileButton.eventListener("click", ()=> alert(alert("Adding ", bakery.item, " at ", bakery.price, " to the cart.")))
 }
 
 function displayBakery(arr) {
@@ -31,6 +33,7 @@ function displayBakery(arr) {
     createBakeryTile(arr[i])
 }
 }
+
 
 getBakeryItems()
 
@@ -89,17 +92,12 @@ chocolatebtn.addEventListener('click', () => {
 const cartInfo = document.querySelector("#cart-info")
 const cart = document.querySelector("#cart")
 const cartBtn = document.querySelectorAll("#cart-btn")
+const itemCount = document.querySelector("#item-count")
+
 
 cartInfo.addEventListener('click', () => {
     cart.classList.toggle('show-cart')
 
-})()
+})
 
 
-const cartAdder = () => {
-    cartBtn.forEach(function(btn){
-        btn.addEventListener('click', function(event){
-            
-        })
-    })
-}

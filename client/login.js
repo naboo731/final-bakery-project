@@ -2,6 +2,7 @@ const loginEmailInput = document.querySelector("#login-email-input")
 const loginPasswordInput = document.querySelector("#login-password-input")
 const loginBtn = document.querySelector(".login-btn")
 
+
 const errCallback= () =>{alert('There was an error in your request. Try again.')}
 
 const userLogin = () => {
