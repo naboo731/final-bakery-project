@@ -15,11 +15,13 @@
 <body>
     <section id="main-heading">
         <heading>
-             <a href="home.html"><img src="../logo without background.png" id="logo"></a> 
+             <a href="home.html"><img src="../logo without background.png" id="logo" class="grow"></a> 
          </heading> 
+        <div id="right-of-logo" >
          <a id="login-user-btn" class="fas fa-user" style="font-size:36px;color:#5b6e74" href="login.html"></a>
          <a id="order-button" href="menu.html"><h2 id="order-link">ORDER</h2></a>
-         <div id="shoppingcart" class="fa fa-shopping-cart" style="font-size:36px;color:#5b6e74" href="shoppingcart.html"></div>
+         <div id="shoppingcart" class="fa fa-shopping-cart" style="font-size:36px;color:#5b6e74" href="shoppingcart.html">
+        </div>
     </section>
     <section id="nav-section">
         <nav>
@@ -67,19 +69,19 @@
      <section id= "outer-box">
         <div id="cookies-box" class="container">
             <img src="pictures/cookies.jpg" style="width:665px; height: 400px;"/>
-            <button class= "btn" id="cookies-btn">Explore Cookies</button>
+            <button class= "btn" id="cookies-home-btn" onclick= "window.location.href='menu.html'">Explore Cookies</button>
         </div>
         <div id="pastries-box" class="container">
             <img src="pictures/pastriesbox.jpg" style="width:665px; height: 400px;"/>
-            <button class= "btn" id="cookies-btn">Explore Pastries</button>
+            <button class= "btn" id="pastries-btn" onclick= "window.location.href='menu.html'">Explore Pastries</button>
         </div>
         <div id="cakes-box" class="container">
             <img src="pictures/cake.jpg" style="width:665px; height: 400px;"/>
-            <button class= "btn" id="cookies-btn">Explore Cakes</button>
+            <button class= "btn" id="cakes-home-btn" onclick= "window.location.href='menu.html'">Explore Cakes</button>
         </div>
         <div id="collections-box" class="container">
             <img src="pictures/box.png" style="width:665px; height: 400px;"/>
-            <button class= "btn" id="cookies-btn">Explore Sweets Gift Boxes</button>
+            <button class= "btn" id="collections-btn" onclick= "window.location.href='gifts.html'">Explore Sweets Gift Boxes</button>
         </div> 
     </section>
     
