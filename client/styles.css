@@ -277,13 +277,13 @@ body {
   color: #56494c;
 }
 
-.login-btn {
-  z-index: 50;
-}
 .login-btn:hover {
   cursor: pointer;
 }
-
+#login-user-btn {
+  position: relative;
+  left: 300px;
+}
 #item-categories {
   display: flex;
   flex-direction: row;
