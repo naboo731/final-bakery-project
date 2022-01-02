@@ -15,6 +15,9 @@ module.exports = {
            res.status(200).send(user)
        }
     }, 
+    getAllUsers: (req,res)=>{
+        res.status(200).send(bakery.users)
+    },
     createUser: (req, res, next) => {
         let {firstName, lastName, email, password} = req.body
         let user = {

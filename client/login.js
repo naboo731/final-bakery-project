@@ -1,50 +1,35 @@
-const form = document.querySelector("form")
-const eField = form.querySelector(".email")
-const eInput = eField.querySelector("input")
-const pField = form.querySelector(".password")
-const pInput = pField.querySelector("input")
+const loginEmailInput = document.querySelector("#login-email-input")
+const loginPasswordInput = document.querySelector("#login-password-input")
+const loginBtn = document.querySelector(".login-btn")
 
-form.onsubmit = (e)=>{
-  e.preventDefault()
+const errCallback= () =>{alert('There was an error in your request. Try again.')}
 
-  (eInput.value == "") ? eField.classList.add("shake", "error") : checkEmail()
-  (pInput.value == "") ? pField.classList.add("shake", "error") : checkPass()
-
-  setTimeout(()=>{ 
-    eField.classList.remove("shake")
-    pField.classList.remove("shake")
-  }, 500)
-
-  eInput.onkeyup = ()=>{checkEmail()} 
-  pInput.onkeyup = ()=>{checkPass()} 
-
-
-
-  function checkEmail(){ 
-    let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$///PUT IN DB INFO
-
-    if(!eInput.value.match(//DB INFO//){ 
-      eField.classList.add("error")
-      eField.classList.remove("valid")
-      let errorTxt = eField.querySelector(".error-txt")
-     
-      (eInput.value != "") ? errorTxt.innerText = "Enter a valid email address" : errorTxt.innerText = "Email can't be blank"
-    }else{ 
-      eField.classList.remove("error")
-      eField.classList.add("valid")
-    }
-  }
-  function checkPass(){ 
-    if(pInput.value == ""){ 
-      pField.classList.add("error")
-      pField.classList.remove("valid")
-    }else{ 
-      pField.classList.remove("error")
-      pField.classList.add("valid")
-    }
-  }
-
-  if(!eField.classList.contains("error") && !pField.classList.contains("error")){
-    window.location.href = form.getAttribute("action")
-  }
+const userLogin = () => {
+    axios.get("http://localhost:5500/api/bakery/user", {
+        email: loginEmailInput.value,
+        password: loginPasswordInput.value
+    })
+    .then(()=>{
+        alert("You have been logged in!")
+    }).catch(errCallback)
 }
+
+
+const firstNameInput = document.querySelector("#first-name-input")
+const lastNameInput = document.querySelector("#last-name-input")
+const createEmailInput = document.querySelector("#create-email-input")
+const createPasswordInput = document.querySelector("#create-password-input")
+const signUpBtn = document.querySelector("#sign-up-btn")
+
+const signUpUser = () => {
+    axios.post("http://localhost:5500/api/bakery/user", {
+        firstName: firstNameInput.value,
+        lastName: lastNameInput.value,
+        email: createEmailInput.value,
+        password: createPasswordInput.value
+    })
+    .then(()=>{alert("Your user account has been created!")}).catch(errCallback)
+}
+
+loginBtn.addEventListener('click', userLogin)
+signUpBtn.addEventListener('click', signUpUser)

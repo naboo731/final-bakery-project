@@ -53,8 +53,7 @@
                 </div>
                 <div class="error error-txt">Password can't be blank</div>
               </div>
-              <div class="pass-txt"><a href="#">Forgot password?</a></div>
-              <input type="submit" value="Login">
+              <input type="submit" value="Login" class="loginbtn">
             </form>
            
     </section>
@@ -64,21 +63,21 @@
             <form action="#">
                 <div class="field first-name">
                     <div class="input-area">
-                      <input type="text" placeholder="First name">
+                      <input type="text" placeholder="First name" id="first-name-input">
                       <i class="error error-icon fas fa-exclamation-circle"></i>
                     </div>
                     <div class="error error-txt">First name can't be blank</div>
                   </div>
                   <div class="field last-name">
                     <div class="input-area">
-                      <input type="text" placeholder="Last name">
+                      <input type="text" placeholder="Last name" id="last-name-input">
                       <i class="error error-icon fas fa-exclamation-circle"></i>
                     </div>
                     <div class="error error-txt">Last name can't be blank</div>
                   </div>
               <div class="field email">
                 <div class="input-area">
-                  <input type="text" placeholder="Email Address">
+                  <input type="text" placeholder="Email Address" id="create-email-input">
                   <i class="icon fas fa-envelope"></i>
                   <i class="error error-icon fas fa-exclamation-circle"></i>
                 </div>
@@ -86,13 +85,13 @@
               </div>
               <div class="field password">
                 <div class="input-area">
-                  <input type="password" placeholder="Password">
+                  <input type="password" placeholder="Password" id="create-password-input">
                   <i class="icon fas fa-lock"></i>
                   <i class="error error-icon fas fa-exclamation-circle"></i>
                 </div>
                 <div class="error error-txt">Password can't be blank</div>
               </div>
-              <input type="submit" value="Sign-Up">
+              <input type="submit" value="Sign-Up" id="sign-up-btn">
             </form>
           </div>
 
@@ -103,7 +102,7 @@
 
 
 
-
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="login.js"></script>
 </body>
 </html>

@@ -36,10 +36,7 @@ body {
 #order-link-anchor {
   text-decoration: none;
 }
-#loginbtn {
-  position: relative;
-  left: 300px;
-}
+
 * {
   box-sizing: border-box;
 }
@@ -279,9 +276,12 @@ body {
   cursor: pointer;
   color: #56494c;
 }
-#loginbtn:hover {
+
+.login-btn {
+  z-index: 50;
+}
+.login-btn:hover {
   cursor: pointer;
-  color: #56494c;
 }
 
 #item-categories {
