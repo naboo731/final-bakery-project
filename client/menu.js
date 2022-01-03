@@ -118,10 +118,10 @@ function giveActionToButtons(){
               </a>`
 
             cart.appendChild(cartedItem)
+            num+=1
 
             addDeleteFunctionality()
             
-            num+=1
         })
     }
 }
