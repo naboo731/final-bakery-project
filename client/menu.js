@@ -4,18 +4,7 @@ let bakeryItems = []
 
 const bakeryCallback = ({data}) => {
     bakeryItems = data
-    bakeryItemsContainer.innerHTML = ``
-    for(let i=0; i<bakeryItems.length; i++){
-        let tile = document.createElement("div")
-        tile.classList.add(`bakery-tile`)
-        tile.classList.add(`tile${i}`)
-        tile.innerHTML = `<img alt='bakery item cover image' src=${bakeryItems[i].imageURL} class="bakery-item-cover-image"/>
-        <p class="bakery-item-title">${bakeryItems[i].item}</p>
-        <p id="bakery-item-quantity">${bakeryItems[i].quantity}</p>
-        <p id="bakery-item-price">Price: $${bakeryItems[i].price}</p>
-        <button class="cart-btn tile${i}">add to cart</button>`
-        bakeryItemsContainer.appendChild(tile)
-    }
+    createBakeryTiles(bakeryItems)
     giveActionToButtons()
 }
 const getBakeryItems = () => {
@@ -23,6 +12,22 @@ const getBakeryItems = () => {
     .then(bakeryCallback).catch(errCallback)
 }
 getBakeryItems()
+
+function createBakeryTiles(items){
+    console.log(items)
+    bakeryItemsContainer.innerHTML = ``
+    for(let i=0; i<items.length; i++){
+        let tile = document.createElement("div")
+        tile.classList.add(`bakery-tile`)
+        tile.classList.add(`tile${i}`)
+        tile.innerHTML = `<img alt='bakery item cover image' src=${items[i].imageURL} class="bakery-item-cover-image"/>
+        <p class="bakery-item-title">${items[i].item}</p>
+        <p id="bakery-item-quantity">${items[i].quantity}</p>
+        <p id="bakery-item-price">Price: $${items[i].price}</p>
+        <button class="cart-btn tile${i}">add to cart</button>`
+        bakeryItemsContainer.appendChild(tile)
+    }
+}
 
 function giveActionToButtons(){
     for(let i=0; i<bakeryItems.length; i++){
@@ -35,10 +40,8 @@ function giveActionToButtons(){
 
 
 function displayBakery(arr) {
-   bakeryItemsContainer.innerHTML = ``
-   for (let i = 0; i < arr.length; i++) {
-    createBakeryTile(arr[i])
-}
+    bakeryItemsContainer.innerHTML = ``
+    createBakeryTiles(arr)
 }
 
 
@@ -48,8 +51,8 @@ function displayBakery(arr) {
 const searchbar = document.querySelector("#search-bar")
 searchbar.addEventListener('keyup', (el) => {
     const searchItem = el.target.value
-    const filteredItems = bakeryItems.filter(arr => {
-         return arr.item.includes(searchItem)
+    const filteredItems = bakeryItems.filter(item => {
+         return item.item.includes(searchItem)
      })
      displayBakery(filteredItems)
  })
