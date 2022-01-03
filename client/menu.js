@@ -94,7 +94,7 @@ const cartBtn = document.querySelectorAll("#cart-btn")
 const itemCount = document.querySelector("#item-count")
 const displayedCart = document.querySelector(".show-cart")
 const clearCartBtn = document.querySelector("#clear-cart")
-const checkoutBtn = document.querySelector("#checkout-btn")
+
 
 
 cartInfo.addEventListener('click', () => {
@@ -132,29 +132,20 @@ function addDeleteFunctionality() {
     for (let i = 0; i < removeCartItem.length; i++){
         removeCartItem[i].addEventListener('click', (event) => {
             const targetElement = document.querySelector(`.cart-item-${event.target.parentElement.getAttribute("name")}`)
+
             targetElement.remove()
         })
     }
 }
-
-
-
-
-// removeCartItem.addEventListener('click', () => {
-//     // let getParentId = this.getAttribute('cart-item')
-//     // document.getElementById(getParentId).remove()
-
-
-//     this.closest('img').remove()
-// })
-
-// const clearCart = () => {
-//     checkoutBtn.addEventListener('click', () => {
-//         cart.innerHTML = ""
-//     })
-// }
+function clearCart() {
+    const clearCartBtn = document.querySelector("#clear-cart")
+    clearCartBtn.addEventListener('click', () => {
+        cart.innerHTML = ``
+    })
+}
 
 // checkoutBtn.addEventListener('click', () => {
+    // const checkoutBtn = document.querySelector("#checkout-btn")
 //     alert('Thank you for your purchase!')
 
 //     // clearCart()
