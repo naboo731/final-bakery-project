@@ -95,7 +95,7 @@ const itemCount = document.querySelector("#item-count")
 const displayedCart = document.querySelector(".show-cart")
 const clearCartBtn = document.querySelector("#clear-cart")
 const checkoutBtn = document.querySelector("#checkout-btn")
-const removeCartItem = document.querySelector(".cart-item-remove")
+
 
 cartInfo.addEventListener('click', () => {
     cart.classList.toggle('show-cart')
@@ -113,30 +113,48 @@ function giveActionToButtons(){
             `<img src=${bakeryItems[i].imageURL} class="img-fluid-rounded-circle" id="cart-item-img" alt="">
             <p class="cart-item-title">${bakeryItems[i].item}</p>
             <p id="cart-item-price">Price: $${bakeryItems[i].price}</p>
-            <a href='#' class='cart-item-remove' >
+            <a href='#' name='${i}' class='cart-item-remove' >
                 <i class="fas fa-trash"></i>
               </a>`
 
             cart.appendChild(cartedItem)
+
+            addDeleteFunctionality()
             
             num+=1
         })
     }
 }
 
-removeCartItem.addEventListener('click', () => {
-    let getParentId = this.getAttribute('cart-item')
-    document.getElementById(getParentId).remove()
-})
-
-const clearCart = () => {
-    checkoutBtn.addEventListener('click', () => {
-        cart.innerHTML = ""
-    })
+const addDeleteFunctionality = () => {
+    const removeCartItem = document.querySelectorAll(".cart-item-remove")
+    for (let i = 0; i < removeCartItem.length; i++){
+        removeCartItem[i].addEventListener('click', (event) => {
+            const targetElement = document.querySelector(`.cart-item-${event.target.parentElement.getAttribute("name")}`)
+            targetElement.remove()
+        })
+    }
 }
 
-checkoutBtn.addEventListener('click', () => {
-    alert('Thank you for your purchase!')
 
-    // clearCart()
-})
+
+
+// removeCartItem.addEventListener('click', () => {
+//     // let getParentId = this.getAttribute('cart-item')
+//     // document.getElementById(getParentId).remove()
+
+
+//     this.closest('img').remove()
+// })
+
+// const clearCart = () => {
+//     checkoutBtn.addEventListener('click', () => {
+//         cart.innerHTML = ""
+//     })
+// }
+
+// checkoutBtn.addEventListener('click', () => {
+//     alert('Thank you for your purchase!')
+
+//     // clearCart()
+// })
