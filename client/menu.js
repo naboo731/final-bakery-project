@@ -118,6 +118,7 @@ function giveActionToButtons(){
               </a>`
 
             cart.appendChild(cartedItem)
+
             num+=1
 
             addDeleteFunctionality()
@@ -126,7 +127,7 @@ function giveActionToButtons(){
     }
 }
 
-const addDeleteFunctionality = () => {
+function addDeleteFunctionality() {
     const removeCartItem = document.querySelectorAll(".cart-item-remove")
     for (let i = 0; i < removeCartItem.length; i++){
         removeCartItem[i].addEventListener('click', (event) => {
