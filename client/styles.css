@@ -447,30 +447,26 @@ body {
   top: 0;
   right: 0;
   transition: all 0.3s ease-in-out;
-  background: rgba(238, 130, 238, 0.329);
+  background-color: #173753;
   width: 0;
   overflow: hidden;
 }
 
 .show-cart {
-  width: 18rem;
+  width: 400px;
   padding: 2rem 1.5rem;
   position: relative;
   top: 250px;
+  z-index: 2;
 }
 
-.cart-item {
-  transition: all 2s ease-in-out;
-}
 .cart-info__icon {
-  color: var(--mainBlack);
+  color: #5b6e74;
   cursor: pointer;
 }
 
 .cart-info {
-  border: 0.1rem solid var(--mainBlack);
-  color: var(--mainBlack);
-  border-radius: 0.25rem;
+  color: white;
   padding: 0.4rem 0.6rem;
   cursor: pointer;
   position: relative;
@@ -478,20 +474,18 @@ body {
   top: 30px;
 }
 .cart-info:hover {
-  background: var(--mainPink);
-  border-color: var(--mainPink);
-  color: var(--mainWhite);
+  color: #5b6e74;
 }
 .cart-info:hover .cart-info__icon {
-  color: var(--mainWhite);
+  color: white;
 }
 .cart-item-remove {
-  color: var(--mainPink);
+  color: white;
   transition: all 1s ease-in-out;
 }
 .cart-item-remove:hover {
   transform: scale(1.1);
-  color: var(--mainBlack);
+  color: white;
 }
 #cart-item-price {
   font-size: 0.8rem;
@@ -634,4 +628,69 @@ form input[type="submit"] {
 }
 form input[type="submit"]:hover {
   background: #56494c;
+}
+
+.img-fluid-rounded-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
+}
+#cart-item-price {
+  font-size: 15px;
+  font-family: "Open Sans Condensed", sans-serif;
+  color: white;
+}
+.cart-item-title {
+  font-family: "Licorice", cursive;
+  font-size: 20px;
+  color: white;
+}
+.cart-item-remove {
+  color: #81968f;
+}
+.cart-item-remove:hover {
+  transform: scale(1.1);
+  color: white;
+}
+.cart-buttons-container {
+  justify-content: space-evenly;
+  align-items: center;
+}
+#clear-cart {
+  height: 30px;
+  width: 170px;
+  background-color: #81968f;
+  border-radius: 20px;
+  font-family: "Open Sans Condensed", sans-serif;
+  color: white;
+}
+#checkout-btn {
+  height: 30px;
+  width: 170px;
+  background-color: #81968f;
+  border-radius: 20px;
+  font-family: "Open Sans Condensed", sans-serif;
+  color: white;
+}
+#checkout-btn:hover {
+  transform: scale(1.1);
+  background-color: rgb(29, 214, 29);
+}
+#clear-cart:hover {
+  transform: scale(1.1);
+  background-color: tomato;
+}
+.cart-item {
+  width: 300px;
+  transition: all 2s ease-in-out;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cart-total-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  font-family: "Open Sans Condensed", sans-serif;
 }

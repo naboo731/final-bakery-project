@@ -14,7 +14,6 @@ const getBakeryItems = () => {
 getBakeryItems()
 
 function createBakeryTiles(items){
-    console.log(items)
     bakeryItemsContainer.innerHTML = ``
     for(let i=0; i<items.length; i++){
         let tile = document.createElement("div")
@@ -26,15 +25,6 @@ function createBakeryTiles(items){
         <p id="bakery-item-price">Price: $${items[i].price}</p>
         <button class="cart-btn tile${i}">add to cart</button>`
         bakeryItemsContainer.appendChild(tile)
-    }
-}
-
-function giveActionToButtons(){
-    for(let i=0; i<bakeryItems.length; i++){
-        const tileBtn = document.querySelector(`.tile${i}`)
-        tileBtn.addEventListener("click", ()=>{
-            alert(`Adding ${bakeryItems[i].item} to the cart for $${bakeryItems[i].price}`)
-        })
     }
 }
 
@@ -102,11 +92,51 @@ const cartInfo = document.querySelector("#cart-info")
 const cart = document.querySelector("#cart")
 const cartBtn = document.querySelectorAll("#cart-btn")
 const itemCount = document.querySelector("#item-count")
-
+const displayedCart = document.querySelector(".show-cart")
+const clearCartBtn = document.querySelector("#clear-cart")
+const checkoutBtn = document.querySelector("#checkout-btn")
+const removeCartItem = document.querySelector(".cart-item-remove")
 
 cartInfo.addEventListener('click', () => {
     cart.classList.toggle('show-cart')
-
 })
 
+let num = 0
+function giveActionToButtons(){
+    for(let i=0; i<bakeryItems.length; i++){
+        const tileBtn = document.querySelector(`.tile${i}`)
+        tileBtn.addEventListener("click", ()=>{
+            const cartedItem = document.createElement("div")
+            cartedItem.classList.add(`cart-item-${num}`)
+            cartedItem.classList.add("cart-item")
+            cartedItem.innerHTML = 
+            `<img src=${bakeryItems[i].imageURL} class="img-fluid-rounded-circle" id="cart-item-img" alt="">
+            <p class="cart-item-title">${bakeryItems[i].item}</p>
+            <p id="cart-item-price">Price: $${bakeryItems[i].price}</p>
+            <a href='#' class='cart-item-remove' >
+                <i class="fas fa-trash"></i>
+              </a>`
 
+            cart.appendChild(cartedItem)
+            
+            num+=1
+        })
+    }
+}
+
+removeCartItem.addEventListener('click', () => {
+    let getParentId = this.getAttribute('cart-item')
+    document.getElementById(getParentId).remove()
+})
+
+const clearCart = () => {
+    checkoutBtn.addEventListener('click', () => {
+        cart.innerHTML = ""
+    })
+}
+
+checkoutBtn.addEventListener('click', () => {
+    alert('Thank you for your purchase!')
+
+    // clearCart()
+})

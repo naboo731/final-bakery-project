@@ -25,40 +25,15 @@
             <p class="mb-0 text-capitalize"><span id="item-count">0 </span> items</p>
           </div>
           <div id="cart" class="cart">
-            <!-- cart item -->
-            <div class="cart-item d-flex justify-content-between text-capitalize my-3">
-              <img src="img-cart/cake-2.jpeg" class="img-fluid rounded-circle" id="item-img" alt="">
-              <div class="item-text">
-                <p id="cart-item-title" class="font-weight-bold mb-0">cart item</p>
-                <span>$</span>
-                <span id="cart-item-price" class="cart-item-price" class="mb-0">10.99</span>
-              </div>
-              <a href="#" id='cart-item-remove' class="cart-item-remove">
-                <i class="fas fa-trash"></i>
-              </a>
-            </div>
-            <!-- cart item -->
-            <div class="cart-item d-flex justify-content-between text-capitalize my-3">
-              <img src="img-cart/doughnut-2.jpeg" class="img-fluid rounded-circle" id="item-img" alt="">
-              <div class="cart-item-text">
-  
-                <p id="cart-item-title" class="font-weight-bold mb-0">cart item</p>
-                <span>$</span>
-                <span id="cart-item-price" class="cart-item-price" class="mb-0">10.99</span>
-              </div>
-              <a href="#" id='cart-item-remove' class="cart-item-remove">
-                <i class="fas fa-trash"></i>
-              </a>
-            </div>
             <!-- cart total -->
-            <div class="cart-total-container d-flex justify-content-around text-capitalize mt-5">
-              <h5>total</h5>
-              <h5> $ <strong id="cart-total" class="font-weight-bold">10.00</strong> </h5>
+            <div class="cart-total-container">
+              <h5 class="cart-total-title">TOTAL</h5>
+              <h5> $ <strong id="cart-total-num">0.00</strong> </h5>
             </div>
             <!-- cart buttons -->
-            <div class="cart-buttons-container mt-3 d-flex justify-content-between">
-              <a href="#" id="clear-cart" class="btn btn-outline-secondary btn-black text-uppercase">clear cart</a>
-              <a href="#" class="btn btn-outline-secondary text-uppercase btn-pink">checkout</a>
+            <div class="cart-buttons-container">
+              <button id="clear-cart" class="btn btn-outline-secondary btn-black text-uppercase">CLEAR CART</button>
+              <button id="checkout-btn" class="btn btn-outline-secondary text-uppercase btn-pink">CHECKOUT</button>
             </div>
           </div>
         </div>
