@@ -4,28 +4,35 @@ let bakeryItems = []
 
 const bakeryCallback = ({data}) => {
     bakeryItems = data
-    displayBakery(data)
+    bakeryItemsContainer.innerHTML = ``
+    for(let i=0; i<bakeryItems.length; i++){
+        let tile = document.createElement("div")
+        tile.classList.add(`bakery-tile`)
+        tile.classList.add(`tile${i}`)
+        tile.innerHTML = `<img alt='bakery item cover image' src=${bakeryItems[i].imageURL} class="bakery-item-cover-image"/>
+        <p class="bakery-item-title">${bakeryItems[i].item}</p>
+        <p id="bakery-item-quantity">${bakeryItems[i].quantity}</p>
+        <p id="bakery-item-price">Price: $${bakeryItems[i].price}</p>
+        <button class="cart-btn tile${i}">add to cart</button>`
+        bakeryItemsContainer.appendChild(tile)
+    }
+    giveActionToButtons()
 }
 const getBakeryItems = () => {
     axios.get("http://localhost:5500/api/bakery/")
     .then(bakeryCallback).catch(errCallback)
 }
+getBakeryItems()
 
-function createBakeryTile(bakery) {
-    const bakeryTile = document.createElement("div")
-    bakeryTile.classList.add('bakery-tile')
-
-    bakeryTile.innerHTML = 
-    `<img alt='bakery item cover image' src=${bakery.imageURL} class="bakery-item-cover-image"/>
-    <p class="bakery-item-title">${bakery.item}</p>
-    <p id="bakery-item-quantity">${bakery.quantity}</p>
-    <p id="bakery-item-price">${bakery.price}</p>
-    <button class="cart-btn ${bakery.item}" >add to cart</button>`
-
-    bakeryItemsContainer.appendChild(bakeryTile)
-//    const tileButton = document.querySelector(`.cart-btn ${bakery.item}`)
-//     tileButton.eventListener("click", ()=> alert(alert("Adding ", bakery.item, " at ", bakery.price, " to the cart.")))
+function giveActionToButtons(){
+    for(let i=0; i<bakeryItems.length; i++){
+        const tileBtn = document.querySelector(`.tile${i}`)
+        tileBtn.addEventListener("click", ()=>{
+            alert(`Adding ${bakeryItems[i].item} to the cart for $${bakeryItems[i].price}`)
+        })
+    }
 }
+
 
 function displayBakery(arr) {
    bakeryItemsContainer.innerHTML = ``
@@ -35,7 +42,6 @@ function displayBakery(arr) {
 }
 
 
-getBakeryItems()
 
 ////////////////////////////
 
