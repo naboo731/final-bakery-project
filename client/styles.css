@@ -47,6 +47,11 @@ body {
   display: flex;
   justify-content: center;
 }
+#order-link {
+  font-family: "Licorice", cursive;
+  font-size: 30px;
+  text-decoration: none;
+}
 #order-button:hover {
   cursor: pointer;
 }
