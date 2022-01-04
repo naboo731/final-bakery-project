@@ -14,21 +14,43 @@
 </head>
 <body>
     <section id="main-heading">
-        <heading>
-             <a href="home.html"><img src="../logo without background.png" id="logo"></a> 
-         </heading> 
-         <a id="login-user-btn" class="fas fa-user" style="font-size:36px;color:#5b6e74" href="login.html"></a>
-         <a id="order-button" href="menu.html"><h2 id="order-link">ORDER</h2></a>
-         <div id="shoppingcart" class="fa fa-shopping-cart" style="font-size:36px;color:#5b6e74"></div>
-    </section>
-    <section id="nav-section">
-        <nav>
+        <div>
+          <heading id="logo-heading">
+            <a href="home.html"><img src="../logo without background.png" id="logo"></a> 
+          </heading> 
+        </div>
+        <div>
+          <nav class="nav-section">
             <a href="menu.html" id="menu-link-anchor">Menu</a>
             <a href="about.html" id="about-link-anchor">About</a>
             <a href="gifts.html" id="gifts-link-anchor">Gifts</a>
             <a href="sweetmoments.html" id="sweetmoments-link-anchor">Sweet Moments</a>
-        </nav>
+          </nav>
+        </div>
+        <div class="right-header">
+          <a id="login-user-btn" class="fas fa-user" style="font-size:36px;color:#5b6e74" href="login.html"></a>
+          <a id="order-button" href="menu.html"><h2 id="order-link">ORDER</h2></a>
+          <!-- cart -->
+          <div id="cart-info" class="">
+            <span><i class="fas fa-shopping-cart"></i></span>
+          </div>
+          <div id="cart" class="cart">
+            <!-- cart total -->
+            <div class="cart-total-container">
+              <h5 class="cart-total-title">TOTAL</h5>
+              <h5> $ <strong id="cart-total-num"></strong> </h5>
+            </div>
+            <!-- cart buttons -->
+            <div class="cart-buttons-container">
+              <button id="clear-cart" class="btn btn-outline-secondary btn-black text-uppercase">CLEAR CART</button>
+              <button id="checkout-btn" class="btn btn-outline-secondary text-uppercase btn-pink">CHECKOUT</button>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
     </section>
+  </section>
 
 
 
