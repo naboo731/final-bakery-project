@@ -695,4 +695,5 @@ form input[type="submit"]:hover {
   justify-content: space-between;
   color: white;
   font-family: "Open Sans Condensed", sans-serif;
+  font-size: 25px;
 }

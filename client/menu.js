@@ -94,12 +94,19 @@ const cartBtn = document.querySelectorAll("#cart-btn")
 const itemCount = document.querySelector("#item-count")
 const displayedCart = document.querySelector(".show-cart")
 const clearCartBtn = document.querySelector("#clear-cart")
+const checkoutBtn = document.querySelector("#checkout-btn")
 
 
 
 cartInfo.addEventListener('click', () => {
     cart.classList.toggle('show-cart')
 })
+
+let store = {
+    counter: 0
+}
+
+document.querySelector("#cart-total-num").innerHTML = store.counter
 
 let num = 0
 function giveActionToButtons(){
@@ -121,6 +128,9 @@ function giveActionToButtons(){
 
             num+=1
 
+            store.counter += +bakeryItems[i].price
+            document.querySelector("#cart-total-num").innerHTML = store.counter
+
             addDeleteFunctionality()
             
         })
@@ -130,23 +140,35 @@ function giveActionToButtons(){
 function addDeleteFunctionality() {
     const removeCartItem = document.querySelectorAll(".cart-item-remove")
     for (let i = 0; i < removeCartItem.length; i++){
+        const itemPrice = removeCartItem[i].parentNode.children["cart-item-price"].innerText.split('$')
         removeCartItem[i].addEventListener('click', (event) => {
             const targetElement = document.querySelector(`.cart-item-${event.target.parentElement.getAttribute("name")}`)
+
+            store.counter -= +itemPrice[1]
+            document.querySelector("#cart-total-num").innerHTML = store.counter
 
             targetElement.remove()
         })
     }
 }
-function clearCart() {
-    const clearCartBtn = document.querySelector("#clear-cart")
+
+const allCartItems = document.getElementsByClassName("cart-item")
     clearCartBtn.addEventListener('click', () => {
-        cart.innerHTML = ``
-    })
-}
+        store.counter = 0
+        document.querySelector("#cart-total-num").innerHTML = store.counter
+        while (allCartItems.length > 0){
+            for (let i = 0; i < allCartItems.length; i++){
+                allCartItems[i].remove()
+            }
+        }
+})
 
-// checkoutBtn.addEventListener('click', () => {
-    // const checkoutBtn = document.querySelector("#checkout-btn")
-//     alert('Thank you for your purchase!')
 
-//     // clearCart()
-// })
+checkoutBtn.addEventListener('click', () => {
+    clearCartBtn.click()
+    store.counter =0
+    document.querySelector("#cart-total-num").innerHTML = store.counter
+    alert('Thank you for your purchase!')
+
+})
+
