@@ -142,10 +142,8 @@ function addDeleteFunctionality() {
     for (let i = 0; i < removeCartItem.length; i++){
         const itemPrice = removeCartItem[i].parentNode.children["cart-item-price"].innerText.split('$')
         removeCartItem[i].addEventListener('click', (event) => {
-            const targetElement = document.querySelector(`.cart-item-${event.target.parentElement.getAttribute("name")}`)
+            const targetElement = event.target.parentElement.parentElement
 
-            console.log(targetElement)
-            
             store.counter -= +itemPrice[1]
             document.querySelector("#cart-total-num").innerHTML = store.counter
 
