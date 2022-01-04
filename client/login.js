@@ -5,13 +5,14 @@ const loginBtn = document.querySelector(".loginbtn")
 
 const errCallback= () =>{alert(' ❗️ There was an error in your request. Try again. ❗️')}
 
+
 const userLogin = () => {
     console.log(loginEmailInput.value)
     console.log(loginPasswordInput.value)
-    axios.get("http://localhost:5500/api/bakery/user", {
-        email: loginEmailInput.value,
-        password: loginPasswordInput.value
-    })
+    axios.post("http://localhost:5500/api/bakery/loginUser", {
+            email: loginEmailInput.value,
+            password: loginPasswordInput.value
+        })
     .then(()=>{
         alert("✅ You have been logged in! ✅")
         // const loginHeaderBtn = document.querySelector("#login-user-btn")
@@ -27,6 +28,18 @@ const createPasswordInput = document.querySelector("#create-password-input")
 const signUpBtn = document.querySelector("#sign-up-btn")
 
 const signUpUser = () => {
+     // if (firstName = ""){
+        //     alert("❌ Please enter a first name to create an account")
+        // }
+        // else if (lastName = ""){
+        //     alert("❌ Please enter a last name to create an account")
+        // }
+        // else if (email = ""){
+        //     alert("❌ Please enter an email address to create an account")
+        // }
+        // else if (password = "" || password.length < 8){
+        //     alert("❌ Please enter a valid password with a length of at least 8 characters to create an account")
+        // }
     axios.post("http://localhost:5500/api/bakery/user", {
         firstName: firstNameInput.value,
         lastName: lastNameInput.value,
@@ -36,7 +49,8 @@ const signUpUser = () => {
     .then((res)=>{
         if(res.status === 200){
             alert("✅ Your user account has been created! ✅")
-        } else {
+        } 
+        else {
             alert("❌ Your user account cannot be created! ❌")
         }
     }).catch(errCallback)

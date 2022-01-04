@@ -145,6 +145,7 @@ function addDeleteFunctionality() {
             const targetElement = document.querySelector(`.cart-item-${event.target.parentElement.getAttribute("name")}`)
 
             console.log(targetElement)
+            
             store.counter -= +itemPrice[1]
             document.querySelector("#cart-total-num").innerHTML = store.counter
 

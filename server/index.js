@@ -7,7 +7,7 @@ app.use(cors())
 const ctrl = require("./controllers/controller")
 
 app.get("/api/bakery/", ctrl.getBakeryItems)
-app.get("/api/bakery/user", ctrl.getUser)
+app.post("/api/bakery/loginUser", ctrl.getUser)
 app.post("/api/bakery/user", ctrl.createUser, ctrl.getUser)
 app.get("/api/bakery/alluser", ctrl.getAllUsers)
 app.delete("/api/bakery/user", ctrl.deleteUser)
