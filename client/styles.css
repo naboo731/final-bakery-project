@@ -45,11 +45,10 @@ body {
   text-align: center;
   border-radius: 500px;
   display: flex;
+  justify-content: center;
 }
 #order-button:hover {
   cursor: pointer;
-  color: #5b6e74;
-  background-color: #ffffff;
 }
 
 * {
@@ -200,7 +199,7 @@ body {
   height: 100px;
   display: flex;
   position: relative;
-  top: 100px;
+  top: 250px;
 }
 #mini-logo {
   height: 75px;
@@ -292,6 +291,10 @@ body {
   position: relative;
   bottom: 15px;
 }
+.fas.fa-shopping-cart {
+  color: #5b6e74;
+  font-size: 30px;
+}
 
 .cat-btn {
   color: white;
@@ -332,6 +335,8 @@ body {
   justify-content: space-evenly;
   position: relative;
   margin-top: 50px;
+  position: relative;
+  bottom: 60px;
 }
 .bakery-tile {
   background-color: #cfb9a5;
@@ -441,6 +446,8 @@ body {
   display: flex;
   font-family: "Open Sans Condensed", sans-serif;
   text-align: center;
+  justify-content: center;
+  align-items: center;
   border-radius: 50px;
   background-color: #5b6e74;
   color: white;
@@ -706,4 +713,40 @@ form input[type="submit"]:hover {
   color: white;
   font-family: "Open Sans Condensed", sans-serif;
   font-size: 25px;
+}
+.location-info-section {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  position: relative;
+  top: 100px;
+  left: 60px;
+  height: 800px;
+  width: 1300px;
+  background-color: #173753;
+}
+#location-img {
+  width: 1000px;
+  height: 400px;
+  position: relative;
+  left: 150px;
+  top: 50px;
+}
+.info-section {
+  display: flex;
+  position: relative;
+  top: 50px;
+  left: 50px;
+  height: 250px;
+  width: 1200px;
+  color: white;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
+#login-header {
+  color: #5b6e74;
+}
+#sign-up-header {
+  color: #5b6e74;
 }

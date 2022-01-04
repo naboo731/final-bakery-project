@@ -6,10 +6,12 @@ module.exports = {
     }, 
     getUser: (req, res) => {
        let {email, password} = req.body
+       console.log(req)
        let user = bakery.users.filter((el) => {
         return el.email === email && el.password === password
        })
-       if (!user){
+       console.log(user)
+       if (user.length === 0){
            res.status(400).send("User not found")
        } else {
            res.status(200).send(user)
