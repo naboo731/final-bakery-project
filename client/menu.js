@@ -108,53 +108,54 @@ let store = {
 
 document.querySelector("#cart-total-num").innerHTML = store.counter
 
-let num = 0
 function giveActionToButtons(){
     for(let i=0; i<bakeryItems.length; i++){
         const tileBtn = document.querySelector(`.tile${i}`)
         tileBtn.addEventListener("click", ()=>{
             const cartedItem = document.createElement("div")
-            cartedItem.classList.add(`cart-item-${num}`)
             cartedItem.classList.add("cart-item")
             cartedItem.innerHTML = 
             `<img src=${bakeryItems[i].imageURL} class="img-fluid-rounded-circle" id="cart-item-img" alt="">
             <p class="cart-item-title">${bakeryItems[i].item}</p>
             <p id="cart-item-price">Price: $${bakeryItems[i].price}</p>
-            <a href='#' name='${i}' class='cart-item-remove' >
+            <a href='#' id='remove-me-${i}' class='cart-item-remove' >
                 <i class="fas fa-trash"></i>
               </a>`
 
             cart.appendChild(cartedItem)
 
-            num+=1
-
-            store.counter += +bakeryItems[i].price
+            store.counter += parseFloat(bakeryItems[i].price)
             document.querySelector("#cart-total-num").innerHTML = store.counter
 
-            addDeleteFunctionality()
+            addDeleteFunctionality(cartedItem.querySelector(`#remove-me-${i}`))
             
         })
     }
 }
 
-function addDeleteFunctionality() {
-    const removeCartItem = document.querySelectorAll(".cart-item-remove")
-    for (let i = 0; i < removeCartItem.length; i++){
-        const itemPrice = removeCartItem[i].parentNode.children["cart-item-price"].innerText.split('$')
-        removeCartItem[i].addEventListener('click', (event) => {
+function addDeleteFunctionality(item) {
+    // const removeCartItem = document.querySelector(".cart-item-remove")
+    // for (let i = 0; i < removeCartItem.length; i++){
+        // removeCartItem[i].addEventListener('click', (event) => {
+        item.addEventListener('click', (event) => {
             const targetElement = event.target.parentElement.parentElement
 
-            store.counter -= +itemPrice[1]
+            const itemPrice = targetElement.querySelector("#cart-item-price").innerText.split('$')[1]
+
+            console.log('delete clicked!')
+            
+            targetElement.remove()
+
+            store.counter -= parseFloat(itemPrice)
             document.querySelector("#cart-total-num").innerHTML = store.counter
 
-            targetElement.remove()
         })
-    }
+    // }
 }
 
 const allCartItems = document.getElementsByClassName("cart-item")
     clearCartBtn.addEventListener('click', () => {
-        store.counter = 0
+        store.counter = parseFloat(0)
         document.querySelector("#cart-total-num").innerHTML = store.counter
         while (allCartItems.length > 0){
             for (let i = 0; i < allCartItems.length; i++){
@@ -166,7 +167,7 @@ const allCartItems = document.getElementsByClassName("cart-item")
 
 checkoutBtn.addEventListener('click', () => {
     clearCartBtn.click()
-    store.counter =0
+    store.counter = parseFloat(0)
     document.querySelector("#cart-total-num").innerHTML = store.counter
     alert('Thank you for your purchase!')
 
