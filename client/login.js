@@ -20,9 +20,8 @@ const userLogin = () => {
         loginPasswordInput.value = ""
 
         const loginHeaderBtn = document.querySelector("#login-user-btn")
-        loginHeaderBtn.classList.replace("fa-user", "fa-user-slash") 
-
         const iconText = document.querySelector(".login-icon-text")
+        loginHeaderBtn.classList.replace("fa-user", "fa-user-slash") 
         function changeSpanText() {
             iconText.innerText = "Delete Account"
         }
@@ -81,4 +80,4 @@ const signUpUser = () => {
 loginBtn.addEventListener('click', userLogin)
 signUpBtn.addEventListener('click', signUpUser)
 
-//////////////////////
+
