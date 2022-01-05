@@ -30,10 +30,12 @@ const userLogin = () => {
 
        const deleteUserBtn = document.querySelector("#delete-user-btn")
        deleteUserBtn.addEventListener("click", () => {
-           axios.delete(`/api/bakery/user/${loggedInUser.user}`).then(()=>{
+           axios.delete(`http://localhost:5500/api/bakery/user/${loggedInUser.user}`).then(()=>{
                alert("✅ Your account has been deleted.")
 
-           }).catch((err)=> alert('Error deleting user: '+err))
+               deleteUserBtn.parentElement.remove()
+
+           }).catch((err)=> alert('Error deleting user'))
        })
 
        
