@@ -13,7 +13,7 @@ const userLogin = () => {
             password: loginPasswordInput.value
         })
     .then(()=>{
-        loggedInUser = loginEmailInput.value
+       loggedInUser = loginEmailInput.value
         alert("✅ You have been logged in! ✅")
 
         loginEmailInput.value = ""
@@ -22,7 +22,12 @@ const userLogin = () => {
         const loginHeaderBtn = document.querySelector("#login-user-btn")
         loginHeaderBtn.classList.replace("fa-user", "fa-user-slash") 
 
-        // const iconText = document.querySelector(".login-icon-text")
+        const iconText = document.querySelector(".login-icon-text")
+        function changeSpanText() {
+            iconText.innerText = "Delete Account"
+        }
+        changeSpanText()
+
         const deleteHeaderBtn = document.querySelector(".fa-user-slash")
         deleteHeaderBtn.addEventListener('click', () => {
             console.log(loggedInUser)
