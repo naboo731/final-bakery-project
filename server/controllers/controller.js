@@ -6,11 +6,9 @@ module.exports = {
     }, 
     getUser: (req, res) => {
        let {email, password} = req.body
-       console.log(req)
        let user = bakery.users.filter((el) => {
         return el.email === email && el.password === password
        })
-       console.log(user)
        if (user.length === 0){
            res.status(400).send("User not found")
        } else {
@@ -37,6 +35,7 @@ module.exports = {
          return el.email !== email
      })
      bakery.users = users
+     console.log(bakery.users)
      res.status(200).send("User was deleted")
    }
 }

@@ -2,7 +2,7 @@ const loginEmailInput = document.querySelector("#login-email-input")
 const loginPasswordInput = document.querySelector("#login-password-input")
 const loginBtn = document.querySelector(".loginbtn")
 
-
+let loggedInUser = ''
 
 const errCallback= () =>{alert(' ❗️ There was an error in your request. Try again. ❗️')}
 
@@ -13,6 +13,7 @@ const userLogin = () => {
             password: loginPasswordInput.value
         })
     .then(()=>{
+        loggedInUser = loginEmailInput.value
         alert("✅ You have been logged in! ✅")
 
         loginEmailInput.value = ""
@@ -22,25 +23,25 @@ const userLogin = () => {
         loginHeaderBtn.classList.replace("fa-user", "fa-user-slash") 
 
         // const iconText = document.querySelector(".login-icon-text")
-
-    }).catch(errCallback)
-}
-
-const deleteUserAccount = () => {
-    let userWarning = document.querySelector(".fa-user-slash")
-    userWarning.addEventListener('click', () => {
-    	axios.delete("/api/bakery/user", {
-
+        const deleteHeaderBtn = document.querySelector(".fa-user-slash")
+        deleteHeaderBtn.addEventListener('click', () => {
+            console.log(loggedInUser)
+            axios.delete("/api/bakery/user", {
+                email: loggedInUser
+            })
+        .then(()=> {
+            alert("✅ Your account has been deleted.")
+    
+            userWarning.classList.replace("fa-user-slash", "fa-user")
         })
-    .then(()=> {
-        alert("✅ Your account has been deleted.")
+            
+        }).catch(errCallback)
 
-        userWarning.classList.replace("fa-user-slash", "fa-user")
-    })
-        
     }).catch(errCallback)
-
 }
+
+console.log('logedin user: ',loggedInUser)
+//////////////////////////
 
 const firstNameInput = document.querySelector("#first-name-input")
 const lastNameInput = document.querySelector("#last-name-input")
@@ -74,3 +75,5 @@ const signUpUser = () => {
 
 loginBtn.addEventListener('click', userLogin)
 signUpBtn.addEventListener('click', signUpUser)
+
+//////////////////////
