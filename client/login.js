@@ -21,8 +21,8 @@ const userLogin = () => {
         const loginHeaderBtn = document.querySelector("#login-user-btn")
         loginHeaderBtn.classList.replace("fa-user", "fa-user-slash") 
 
-        const iconText = document.querySelector(".login-icon-text")
-        
+        // const iconText = document.querySelector(".login-icon-text")
+
     }).catch(errCallback)
 }
 

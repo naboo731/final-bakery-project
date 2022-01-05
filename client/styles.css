@@ -767,3 +767,41 @@ form input[type="submit"]:hover {
 #sign-up-header {
   color: #5b6e74;
 }
+
+.footer-icons {
+  height: 30px;
+  width: 200px;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: space-evenly;
+  top: 95px;
+  right: 425px;
+}
+.fab.fa-instagram {
+  font-size: 35px;
+  color: #173753;
+}
+.fab.fa-instagram:hover {
+  cursor: pointer;
+  font-size: 35px;
+  color: white;
+}
+.fab.fa-facebook {
+  font-size: 35px;
+  color: #173753;
+}
+.fab.fa-facebook:hover {
+  cursor: pointer;
+  font-size: 35px;
+  color: white;
+}
+.fab.fa-yelp {
+  font-size: 35px;
+  color: #173753;
+}
+.fab.fa-yelp:hover {
+  cursor: pointer;
+  font-size: 35px;
+  color: white;
+}
