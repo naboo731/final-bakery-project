@@ -15,11 +15,19 @@ const userLogin = () => {
         })
     .then(()=>{
         alert("✅ You have been logged in! ✅")
-        // const loginHeaderBtn = document.querySelector("#login-user-btn")
-        // loginHeaderBtn.classList.replace("fa-user", "fa-user-slash") 
+        loginEmailInput.value = ""
+        loginPasswordInput.value = ""
+
+        const loginHeaderBtn = document.querySelector("#login-user-btn")
+        loginHeaderBtn.classList.replace("fa-user", "fa-user-slash") 
+
     }).catch(errCallback)
 }
 
+// let userWarning = document.querySelector(".fa-user-slash")
+// userWarning.addEventListener('mouseover', () => {
+// 	alert("Want to delete account? Click the user.")
+// })
 
 const firstNameInput = document.querySelector("#first-name-input")
 const lastNameInput = document.querySelector("#last-name-input")
@@ -28,18 +36,6 @@ const createPasswordInput = document.querySelector("#create-password-input")
 const signUpBtn = document.querySelector("#sign-up-btn")
 
 const signUpUser = () => {
-     // if (firstName = ""){
-        //     alert("❌ Please enter a first name to create an account")
-        // }
-        // else if (lastName = ""){
-        //     alert("❌ Please enter a last name to create an account")
-        // }
-        // else if (email = ""){
-        //     alert("❌ Please enter an email address to create an account")
-        // }
-        // else if (password = "" || password.length < 8){
-        //     alert("❌ Please enter a valid password with a length of at least 8 characters to create an account")
-        // }
     axios.post("http://localhost:5500/api/bakery/user", {
         firstName: firstNameInput.value,
         lastName: lastNameInput.value,
@@ -47,12 +43,19 @@ const signUpUser = () => {
         password: createPasswordInput.value
     })
     .then((res)=>{
+        console.log(res.status)
         if(res.status === 200){
             alert("✅ Your user account has been created! ✅")
         } 
         else {
             alert("❌ Your user account cannot be created! ❌")
         }
+
+        firstNameInput.value = ''
+        lastNameInput.value = ""
+        createEmailInput.value = ""
+        createPasswordInput.value = ""
+
     }).catch(errCallback)
 }
 
