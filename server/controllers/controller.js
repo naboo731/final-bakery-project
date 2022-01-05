@@ -30,12 +30,13 @@ module.exports = {
         next() //getUser
     },
    deleteUser: (req, res) => {
-     let {email} = req.body
+       console.log(req)
+     let {email} = req.params
      let users = bakery.users.filter((el)=> {
          return el.email !== email
      })
      bakery.users = users
-     console.log(bakery.users)
+    //  console.log(bakery.users)
      res.status(200).send("User was deleted")
    }
 }

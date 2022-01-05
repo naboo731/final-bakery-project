@@ -1,8 +1,11 @@
 const loginEmailInput = document.querySelector("#login-email-input")
 const loginPasswordInput = document.querySelector("#login-password-input")
 const loginBtn = document.querySelector(".loginbtn")
+const rightHeader = document.querySelector(".right-header")
 
-let loggedInUser = ''
+let loggedInUser = {
+    user: ''
+}
 
 const errCallback= () =>{alert(' ❗️ There was an error in your request. Please try again. ❗️')}
 
@@ -13,38 +16,30 @@ const userLogin = () => {
             password: loginPasswordInput.value
         })
     .then(()=>{
-       loggedInUser = loginEmailInput.value
-        alert("✅ You have been logged in! ✅")
+        loggedInUser.user = loginEmailInput.value
+       alert("✅ You have been logged in! ✅")
 
-        loginEmailInput.value = ""
-        loginPasswordInput.value = ""
+       loginEmailInput.value = ""
+       loginPasswordInput.value = ""
 
-        const loginHeaderBtn = document.querySelector("#login-user-btn")
-        const iconText = document.querySelector(".login-icon-text")
-        loginHeaderBtn.classList.replace("fa-user", "fa-user-slash") 
-        function changeSpanText() {
-            iconText.innerText = "Delete Account"
-        }
-        changeSpanText()
+       let deleteUser = document.createElement("div")
+       deleteUser.classList.add('delete-user-div')
+       deleteUser.innerHTML = `<button id="delete-user-btn" class="fas fa-user-slash" style="font-size:36px;color:#5b6e74"></button>
+       <span class="login-icon-text">Delete Account</span>`
+       rightHeader.appendChild(deleteUser)
 
-        const deleteHeaderBtn = document.querySelector(".fa-user-slash")
-        deleteHeaderBtn.addEventListener('click', () => {
-            console.log(loggedInUser)
-            axios.delete("/api/bakery/user", {
-                email: loggedInUser
-            })
-        .then(()=> {
-            alert("✅ Your account has been deleted.")
-    
-            userWarning.classList.replace("fa-user-slash", "fa-user")
-        })
-            
-        }).catch(errCallback)
+       const deleteUserBtn = document.querySelector("#delete-user-btn")
+       deleteUserBtn.addEventListener("click", () => {
+           axios.delete(`/api/bakery/user/${loggedInUser.user}`).then(()=>{
+               alert("✅ Your account has been deleted.")
 
-    }).catch(errCallback)
+           }).catch((err)=> alert('Error deleting user: '+err))
+       })
+
+       
+    }).catch((err)=>alert('Error logging user in.'))
 }
 
-console.log('logedin user: ',loggedInUser)
 //////////////////////////
 
 const firstNameInput = document.querySelector("#first-name-input")
@@ -61,7 +56,6 @@ const signUpUser = () => {
         password: createPasswordInput.value
     })
     .then((res)=>{
-        console.log(res.status)
         if(res.status === 200){
             alert("✅ Your user account has been created! ✅")
         } 
@@ -74,7 +68,7 @@ const signUpUser = () => {
         createEmailInput.value = ""
         createPasswordInput.value = ""
 
-    }).catch(errCallback)
+    }).catch((err)=> alert('Error creating user account.'))
 }
 
 loginBtn.addEventListener('click', userLogin)

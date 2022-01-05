@@ -10,7 +10,7 @@ app.get("/api/bakery/", ctrl.getBakeryItems)
 app.post("/api/bakery/loginUser", ctrl.getUser)
 app.post("/api/bakery/user", ctrl.createUser, ctrl.getUser)
 app.get("/api/bakery/alluser", ctrl.getAllUsers)
-app.delete("/api/bakery/user", ctrl.deleteUser)
+app.delete("/api/bakery/user/:email", ctrl.deleteUser)
 
 
 
