@@ -4,7 +4,7 @@ const loginBtn = document.querySelector(".loginbtn")
 
 let loggedInUser = ''
 
-const errCallback= () =>{alert(' ❗️ There was an error in your request. Try again. ❗️')}
+const errCallback= () =>{alert(' ❗️ There was an error in your request. Please try again. ❗️')}
 
 
 const userLogin = () => {
