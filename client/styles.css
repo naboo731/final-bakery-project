@@ -289,6 +289,12 @@ body {
 #login-user-btn {
   display: flex;
 }
+.login-icon-text {
+  color: #5b6e74;
+  font-family: "Open Sans Condensed", sans-serif;
+  display: flex;
+  align-self: center;
+}
 #item-categories {
   display: flex;
   flex-direction: row;
@@ -300,7 +306,9 @@ body {
   color: #5b6e74;
   font-size: 30px;
 }
-
+.fas.fa-shopping-cart:hover {
+  cursor: pointer;
+}
 .cat-btn {
   color: white;
   font-size: 20px;
@@ -516,6 +524,10 @@ body {
   flex-direction: row-reverse;
   position: relative;
   top: 50px;
+}
+.login-sign-up:hover {
+  cursor: pointer;
+  color: #56494c;
 }
 #login-email-input {
   height: 50px;

@@ -3,31 +3,44 @@ const loginPasswordInput = document.querySelector("#login-password-input")
 const loginBtn = document.querySelector(".loginbtn")
 
 
+
 const errCallback= () =>{alert(' ❗️ There was an error in your request. Try again. ❗️')}
 
 
 const userLogin = () => {
-    console.log(loginEmailInput.value)
-    console.log(loginPasswordInput.value)
     axios.post("http://localhost:5500/api/bakery/loginUser", {
             email: loginEmailInput.value,
             password: loginPasswordInput.value
         })
     .then(()=>{
         alert("✅ You have been logged in! ✅")
+
         loginEmailInput.value = ""
         loginPasswordInput.value = ""
 
         const loginHeaderBtn = document.querySelector("#login-user-btn")
-        loginHeaderBtn.classList.replace("fa-user", "fa-user-slash") 
+        const iconText = document.querySelector(".login-icon-text")
+        // loginHeaderBtn.classList.replace("fa-user", "fa-user-slash") 
+        // iconText.classList.replace()
 
     }).catch(errCallback)
 }
 
-// let userWarning = document.querySelector(".fa-user-slash")
-// userWarning.addEventListener('mouseover', () => {
-// 	alert("Want to delete account? Click the user.")
-// })
+const deleteUserAccount = () => {
+    let userWarning = document.querySelector(".fa-user-slash")
+    userWarning.addEventListener('click', () => {
+    	axios.delete("/api/bakery/user", {
+
+        })
+    .then(()=> {
+        alert("✅ Your account has been deleted.")
+
+        userWarning.classList.replace("fa-user-slash", "fa-user")
+    })
+        
+    }).catch(errCallback)
+
+}
 
 const firstNameInput = document.querySelector("#first-name-input")
 const lastNameInput = document.querySelector("#last-name-input")
