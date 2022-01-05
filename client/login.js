@@ -19,10 +19,10 @@ const userLogin = () => {
         loginPasswordInput.value = ""
 
         const loginHeaderBtn = document.querySelector("#login-user-btn")
-        const iconText = document.querySelector(".login-icon-text")
-        // loginHeaderBtn.classList.replace("fa-user", "fa-user-slash") 
-        // iconText.classList.replace()
+        loginHeaderBtn.classList.replace("fa-user", "fa-user-slash") 
 
+        const iconText = document.querySelector(".login-icon-text")
+        
     }).catch(errCallback)
 }
 
